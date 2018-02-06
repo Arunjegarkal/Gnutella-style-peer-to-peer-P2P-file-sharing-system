@@ -11,10 +11,14 @@
     How it Works
 
 Main.java
-	Main.java class take 2 arguments (Config file name, Peer ID, Peer’s shared directory). Server thread is created with this peer id and which will run in background poll’s for a client thread with the same port number which is specified in config file for this peer.
-	Peer start the client thread for the neighbors by reading the config file and waits for the server thread with the same respective port number. Once all the client thread created list will be defined which contains list of peers and their shared files.
-	User will be provided with two option one to search file and download and to Broadcast file modification message. In the file download option user enter the file to be downloaded and the client thread sends message to all the neighboring peers a search message with filename and TTL. Neighboring search its local shared directory for the requested file and forwards the request to its neighbors and request will forwarded to neighbors till TTL value reaches 0. All the neighbor returns its peers id if it contains the requested file. List of peers containing the file will be displayed to the user.
-	User select the peer from which file need to be downloaded. Once peer id is selected server thread is invoked and connections is established with the current peers thread as a client. Then the requested file will be downloaded as stream of bytes from server to client.
+
+Main.java class take 2 arguments (Config file name, Peer ID, Peer’s shared directory). Server thread is created with this peer id and which will run in background poll’s for a client thread with the same port number which is specified in config file for this peer.
+
+Peer start the client thread for the neighbors by reading the config file and waits for the server thread with the same respective port number. Once all the client thread created list will be defined which contains list of peers and their shared files.
+
+User will be provided with two option one to search file and download and to Broadcast file modification message. In the file download option user enter the file to be downloaded and the client thread sends message to all the neighboring peers a search message with filename and TTL. Neighboring search its local shared directory for the requested file and forwards the request to its neighbors and request will forwarded to neighbors till TTL value reaches 0. All the neighbor returns its peers id if it contains the requested file. List of peers containing the file will be displayed to the user.
+
+User select the peer from which file need to be downloaded. Once peer id is selected server thread is invoked and connections is established with the current peers thread as a client. Then the requested file will be downloaded as stream of bytes from server to client.
   
 In the other flow that is broadcasting file modification follow I have used the push based approach. In this user is asked for a file name to broadcast the message same server and client threads are used here message stating the file modified will be pushed to all the neighboring peers which has the file.
 
