@@ -28,7 +28,7 @@ Socket programming makes this Gnutella-style peer-to-peer (P2P) model platform i
 
     Improvements: 
 
-•Performance of the system can be improved by using Avro or protobuf for serializing and transmitting t the data in place of native java serializable
+•Performance of the system can be improved by using Avro or protobuf for serializing and transmitting the data in place of native java serializable
 • This Project can be improved by provide User interface 
 
     Performance
